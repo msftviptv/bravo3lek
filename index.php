@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>Bravo 3leek</title>
-  <meta name="description" content="Bravo 3leeeeeeeeeeeeeeeeeeek">
+  <meta name="description" content="مذكرات جرجس عادل دحيح الدفعة">
   <meta name="author" content="SitePoint">
 <style>
   body {
