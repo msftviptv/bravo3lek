@@ -8,7 +8,7 @@
 
   <title>Bravo 3leek</title>
   <meta name="description" content="مذكرات جرجس عادل دحيح الدفعة">
-  <meta name="author" content="SitePoint">
+  <meta name="author" content="GENIO">
 <style>
   body {
     background-color: gray;
@@ -32,10 +32,14 @@
   margin: 4px 2px;
   opacity: 0.6;
   transition: 0.3s;
+  cursor: pointer;
 }
-.bravo {
+video {
   position: fixed;
   top: 0;
+  width: 100%; 
+  height: 100%;
+  object-fit: contain;
   
 }
 .image {
@@ -53,7 +57,7 @@
 .btn:hover {opacity: 1}
 @media (max-width: 768px) {
   body {
-    padding-top: 130px;
+    padding-top: 100px;
   }
   .textfield {
     width: 80%;
@@ -80,6 +84,27 @@ opacity: 80%;
   bottom: 10px;
   color: white;
 }
+.icon {
+  width: 20px;
+  height: 20px;
+  margin: 10px;
+  margin-bottom: -5px;
+  margin-right: 5px;
+}
+.fridaylable{
+  background-color: #f4511e;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  font-size: 16px;
+  margin: 4px 2px;
+  opacity: 0.6;
+  transition: 0.3s;
+  cursor: pointer;
+  margin-top: 10px;
+}
+.fridaylable:hover {opacity: 1}
 </style>
 </head>
 
@@ -88,17 +113,27 @@ opacity: 80%;
   <input placeholder="....." type="text" class='textfield'></input>
   <br>
   <button class='btn'>Submit</button>
+  <br><br>
+  
+  <div class = 'question'>صمدت اسبوعا اخر في هذا العالم؟</div>
+  <button class='fridaylable'>اضغط هنا معلش</button>
   <div class="dev">Developed By: <em>GENIO</em></div>
   <div class="hide mylable">اكتب يسطا متخمش</div>
   <video src="/video.mp4" controls class='hide bravo'></video>
+  <video src="/video2.mp4" controls class='hide bravo2'></video>
+  <video src="/video3.mp4" controls class='hide bravo3'></video>
+  <video src="/video4.mp4" controls class='hide bravo4'></video>
+  <video src="/friday.mp4" controls class='hide friday'></video>
   <script>
-    const bravo = document.querySelector('.bravo');
+    const videos = ['bravo', 'bravo2', 'bravo3', 'bravo4'];
     document.querySelector('.btn').addEventListener('click', ()=>{
       if (document.querySelector('input').value == '') {
         document.querySelector('.mylable').classList.remove('hide');
       }
       else 
         {
+          const vidclass = videos[Math.floor(Math.random() * videos.length)];
+          const bravo = document.querySelector(`.${vidclass}`);
           document.querySelector('.mylable').classList.add('hide');
           document.querySelector('input').value = '';
           bravo.classList.remove('hide');
@@ -106,11 +141,27 @@ opacity: 80%;
           bravo.play();
         }
     })
-    bravo.addEventListener('ended', ()=>{
+    const friday = document.querySelector('.friday');
+    document.querySelector('.fridaylable').addEventListener('click', ()=>{
+  
+        friday.classList.remove('hide');
+        friday.currentTime = 0;
+        friday.play();
+    })
+    videos.forEach(v=>{
+      const bravo = document.querySelector(`.${v}`);
+      bravo.addEventListener('ended', ()=>{
       bravo.classList.add('hide');
     })
     bravo.addEventListener('pause', ()=>{
       bravo.classList.add('hide');
+    })
+    })
+    friday.addEventListener('ended', ()=>{
+      friday.classList.add('hide');
+    })
+    friday.addEventListener('pause', ()=>{
+      friday.classList.add('hide');
     })
   </script>
   
