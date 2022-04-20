@@ -109,14 +109,14 @@ opacity: 80%;
 </head>
 
 <body>
-  <div class="question">ذاكرت ايه النهاردة يسطي؟</div><br><br>
+  <div class="question">ايه الانجاز اللي عملته النهاردة ؟</div><br><br>
   <input placeholder="....." type="text" class='textfield'></input>
   <br>
   <button class='btn'>Submit</button>
   <br><br>
   
-  <div class = 'question'>انت خلصت التجاري ياعم انت <div>
-  <button class='fridaylable'>  ايوة يا سيدي خلصته</button>
+  <div class = 'question'>صمدت اسبوعا اخر في هذا العالم؟</div>
+  <button class='fridaylable'>اضغط هنا معلش</button>
   <div class="dev">Developed By: <em>GENIO</em></div>
   <div class="hide mylable">اكتب يسطا متخمش</div>
   <video src="/video.mp4" controls class='hide bravo'></video>
